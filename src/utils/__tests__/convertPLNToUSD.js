@@ -18,5 +18,18 @@ describe('ConvertPLNtoUSD', () => {
     expect(convertPLNToUSD('')).toBeNaN();
   });
 
+  it('should return "Error" when input is different than number and string', () => {
+    expect(convertPLNToUSD({})).toBe('Error');
+    expect(convertPLNToUSD([])).toBe('Error');
+    expect(convertPLNToUSD(null)).toBe('Error');
+    expect(convertPLNToUSD(undefined)).toBe('Error');
+    expect(convertPLNToUSD(function() {})).toBe('Error');
+  });
+  
+  it('should return zero when input is lower than zero', () => {
+    expect(convertPLNToUSD(-1)).toBe('$0.00');
+    expect(convertPLNToUSD(-2)).toBe('$0.00');
+    expect(convertPLNToUSD(-5)).toBe('$0.00');
+  });
 });
 
