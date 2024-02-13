@@ -15,6 +15,8 @@ import { cleanup} from '@testing-library/react';
             { amount: '200', from: 'PLN', to: 'USD', result: 'PLN 200.00 = $57.14' },
             { amount: '1', from: 'PLN', to: 'USD', result: 'PLN 1.00 = $0.29' },
             { amount: '300', from: 'USD', to: 'PLN', result: '$300.00 = PLN 1,050.00'},
+            { amount: '300', from: 'USD', to: 'USD', result: '$300.00 = $300.00'},
+            { amount: '300', from: 'PLN', to: 'PLN', result: 'PLN 300.00 = PLN 300.00'},
       ];
 
       for(const testObj of testCases) {
