@@ -11,10 +11,10 @@ import { cleanup} from '@testing-library/react';
     it('should render proper info about conversion when PLN -> USD', () => {
         const testCases = [
             { amount: '100', from: 'PLN', to: 'USD', result: 'PLN 100.00 = $28.57'},
-          //  { amount: '20', from: 'USD', to: 'PLN' },
+            { amount: '20', from: 'USD', to: 'PLN', result: '$20.00 = PLN 70' },
             { amount: '200', from: 'PLN', to: 'USD', result: 'PLN 200.00 = $57.14' },
-            { amount: '1', from: 'PLN', to: 'USD', result: 'PLN 1 = $0.29' },
-          //  { amount: '345', from: 'USD', to: 'PLN' },
+            { amount: '1', from: 'PLN', to: 'USD', result: 'PLN 1.00 = $0.29' },
+            { amount: '300', from: 'USD', to: 'PLN', result: '$300.00 = PLN 1,050.00'},
       ];
 
       for(const testObj of testCases) {
@@ -25,7 +25,6 @@ import { cleanup} from '@testing-library/react';
         cleanup();
       }
     })
-   
 });
 
 
